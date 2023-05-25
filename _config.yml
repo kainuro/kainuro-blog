@@ -1,0 +1,28 @@
+title: Kainuro Blog
+markdown: kramdown
+kramdown:  
+  parse_block_html: true
+  syntax_highlighter: rouge
+
+domain: kainuro.github.io
+url: https://kainuro.github.io  
+baseurl: /   
+title: "Kainuro"
+
+#===: config for postcss / tailwindcss
+plugins:
+  - jekyll-postcss
+
+postcss:
+  cache: false
+
+#===: config for post behavior
+input: GFM
+highlighter: rouge
+permalink: /:categories/:title
+
+#===: colecciones (cursos)
+collections:
+  courses:
+    output: true
+    permalink: /courses/:title

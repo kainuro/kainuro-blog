@@ -1,0 +1,13 @@
+<section class="bg-transparent dark:bg-gray-900 max-w-screen">
+    <div class="py-8 px-0 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        {% include hero.html title='Blog' description='Apuntes, artículos y noticias relacionadas a la Ciencia de la Computación. '%}
+
+        <!-- START POST SECTION -->
+        <div class="grid gap-8 lg:grid-cols-2">
+            <!-- Iter for each post -->
+            {% include post.html %}   
+        </div>  
+        <!-- END POST SECTION -->
+        
+    </div>
+  </section>

@@ -1,0 +1,23 @@
+---
+layout: default
+title: Apuntes digitales
+permalink: /notes/
+---
+
+<section class="bg-transparent dark:bg-gray-900 max-w-screen">
+    <div class="py-8 px-0 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        {% include hero.html title='Repositorio de Apuntes' description='Explora mi repositorio de apuntes digitales realizados durante el transcurso de mis cursos de la carrera de Ciencia de Computación.'%}
+
+        <!-- START POST SECTION -->
+        <div class="grid gap-5 lg:grid-cols-1">
+            <!-- Iter for each post -->
+            <div>
+                {% for item in site.data.coursesList %}
+                    {% include notes_wrapper.html %}                
+                {% endfor %}
+            </div>
+        </div>  
+        <!-- END POST SECTION -->
+
+    </div>
+  </section>

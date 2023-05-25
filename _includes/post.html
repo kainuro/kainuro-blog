@@ -1,0 +1,36 @@
+{% for post in site.posts limit:10 %}
+<article class="p-6 bg-white rounded-lg border-2 border-neutral-200 shadow-md">
+    <div class="flex justify-between items-center mb-5 text-neutral-600">
+        <span class="text-s font-medium inline-flex items-center py-0.5 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive-filled mr-2" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <rect x="2" y="3" width="20" height="4" rx="2" stroke-width="0" fill="currentColor"></rect>
+                <path d="M19 9c.513 0 .936 .463 .993 1.06l.007 .14v7.2c0 1.917 -1.249 3.484 -2.824 3.594l-.176 .006h-10c-1.598 0 -2.904 -1.499 -2.995 -3.388l-.005 -.212v-7.2c0 -.663 .448 -1.2 1 -1.2h14zm-5 2h-4l-.117 .007a1 1 0 0 0 0 1.986l.117 .007h4l.117 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor"></path>
+             </svg>
+            {% for category in post.categories %}
+            {{ category }}
+            {% if forloop.last %}{% else %},{% endif %}
+            {% endfor %}
+        </span>
+        <span class="text-sm">{{ post.date | date: "%B" | localize: "es"}}, {{ post.date | date: "%-d" | localize: "es"}} </span>
+    </div>
+    <h2 class="mb-2 text-2xl font-semibold tracking-tight text-black">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <p class="mb-5 font-light text-neutral-900">
+        {{ post.description }}
+    </p>
+    <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img class="w-7 h-7 rounded-full" src="{{ post.author_img }}" alt="{{ post.author }}" />
+            <span class="font-medium text-neutral-600">
+                {{ post.author }}
+            </span>
+        </div>
+        <a href="{{ post.url }}" class="inline-flex items-center font-medium text-neutral-600 hover:underline">
+            Leer más
+            <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
+</article>
+{% endfor %}      

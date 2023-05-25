@@ -1,0 +1,13 @@
+<!-- Add header of section course -->
+<div class="bg-neutral-300 text-medium p-6">
+  <p class="text-xl font-medium">{{ item.title }}</p>
+</div> 
+
+<!-- filtrar cursos de acuerdo a su categoría-->
+{% assign course_notes = site.courses | where:"alias", item.alias %}
+<!-- Imprimir cursos de acuerdo a su categoría -->
+<div class="mb-8 p-6 bg-neutral-100 text-xl">
+  {% for course_data in course_notes %}
+      <p><a href="{{ site.url }}{{ course_data.url }}" class="hover:text-yellow-600 transition-all">{{ course_data.title }}</a></p>
+  {% endfor %}
+</div>
