@@ -6,7 +6,7 @@ kramdown:
 
 domain: kainuro.github.io
 url: https://kainuro.github.io  
-baseurl: /   
+baseurl: 'kainuro-blog'
 title: "Kainuro"
 
 #===: config for postcss / tailwindcss
